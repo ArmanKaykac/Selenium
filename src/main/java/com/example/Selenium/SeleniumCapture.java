@@ -5,6 +5,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.File;
 import java.util.Base64;
@@ -16,8 +17,11 @@ public class SeleniumCapture {
 
 
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\arman\\Downloads\\Selenium\\chromedriver.exe");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
 
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
 
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
@@ -31,7 +35,7 @@ public class SeleniumCapture {
         WebElement button = driver.findElement(By.xpath("//*[@id=\"alarmmap\"]/div[2]/div[1]/div[1]/a"));
         button.click();
 
-        Thread.sleep(5000);     
+        Thread.sleep(5000);
 
         // Screenshot of map as Base64
         WebElement map = driver.findElement(By.xpath("//*[@id='alarmmap'] "));
