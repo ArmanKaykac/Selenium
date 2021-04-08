@@ -15,7 +15,7 @@ public class SeleniumCapture {
     public static String CaptureScreen(String url) throws InterruptedException { //set the location of chrome browser
 
 
-        System.setProperty("webdriver.chrome.driver", "C:\\selenium\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\arman\\Downloads\\Selenium\\chromedriver.exe");
 
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
