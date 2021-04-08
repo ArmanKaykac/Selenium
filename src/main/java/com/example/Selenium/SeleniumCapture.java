@@ -25,10 +25,13 @@ public class SeleniumCapture {
 
         driver.get(url); // url parameter
 
+        Thread.sleep(5000);
 
         // Fullscreen button click
         WebElement button = driver.findElement(By.xpath("//*[@id=\"alarmmap\"]/div[2]/div[1]/div[1]/a"));
         button.click();
+
+        Thread.sleep(5000);
 
         // Screenshot of map as Base64
         WebElement map = driver.findElement(By.xpath("//*[@id='alarmmap'] "));
